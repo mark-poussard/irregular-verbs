@@ -2,6 +2,7 @@ import VerbSection, { NBR_SECTIONS } from "./VerbSection";
 import SeedRandom from "seed-random";
 import VerbGroup, { MAX_GROUP } from "./VerbGroup";
 import Verb from "./Verb";
+import Test from "./Test";
 
 export default class VerbSections{
     private sections : VerbSection[];
@@ -11,6 +12,13 @@ export default class VerbSections{
     }
 
     getSections = () => this.sections;
+
+    createTestForSection = (idx : number, seed : number) => {
+        SeedRandom(seed.toString(), {global: true});
+        const test = Test.create(this.sections[idx], ...this.sections.slice(0, idx));
+        SeedRandom.resetGlobal();
+        return test;
+    }
 
     toCsv = () => {
         return this.sections.map(s => s.toCsv()).join("\n");

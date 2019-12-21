@@ -18,9 +18,15 @@ const SeedSelector : React.FunctionComponent<ISeedSelectorProps> = props => {
             props.onSelect(seed);
         }
     }
+    const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.which === 13) {
+            event.currentTarget.blur();
+            onClick();
+        }
+    }
     return (
         <div>
-            <input onChange={onChange} value={seedValue}/>
+            <input onChange={onChange} onKeyPress={onKeyPress} value={seedValue}/>
             <button onClick={onClick}>Select seed</button>
         </div>
     );

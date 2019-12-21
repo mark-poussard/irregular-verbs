@@ -18,13 +18,17 @@ const VerbSections : React.FunctionComponent<IVerbSectionsProps> = props => {
     }, [props]);
     const doDownloadAllSections = () => {
         const blob = new Blob([verbSections.toCsv()], {type: "text/csv;charset=utf-8"});
-        FileSaver.saveAs(blob, "AllSections.csv");
+        FileSaver.saveAs(blob, "section.all.csv");
     }
     return (
         <div>
             <button onClick={doDownloadAllSections}>Download all sections</button>
             {verbSections.getSections().map((verbSection, idx) => 
-                <VerbSection key={idx} verbSection={verbSection} idx={idx}/>
+                <VerbSection key={idx} 
+                    verbSections={verbSections} 
+                    verbSection={verbSection} 
+                    idx={idx}
+                    seed={props.seed}/>
             )}
         </div>
     );
