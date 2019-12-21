@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/irregular-verbs/precache-manifest.3f21ff3a88cb7f73838ff0ca547720c4.js"
+  "/irregular-verbs/precache-manifest.fbbe4df136c5a68cc9ad3f00c48c56f4.js"
 );
 
 workbox.clientsClaim();
