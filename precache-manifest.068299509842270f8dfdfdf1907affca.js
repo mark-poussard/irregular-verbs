@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/irregular-verbs/static/js/runtime~main.75882a42.js"
   },
   {
-    "revision": "e3344ebedcd1f568dd79",
-    "url": "/irregular-verbs/static/js/main.e3344ebe.chunk.js"
+    "revision": "76e02c5c4ef08186a36b",
+    "url": "/irregular-verbs/static/js/main.76e02c5c.chunk.js"
   },
   {
     "revision": "48b28f454a57fa1b5561",
     "url": "/irregular-verbs/static/js/1.48b28f45.chunk.js"
   },
   {
-    "revision": "e3344ebedcd1f568dd79",
-    "url": "/irregular-verbs/static/css/main.47a198d8.chunk.css"
+    "revision": "76e02c5c4ef08186a36b",
+    "url": "/irregular-verbs/static/css/main.c4511979.chunk.css"
   },
   {
-    "revision": "07e1ad7fdbea953d0222671f85702853",
+    "revision": "2861a39ab8eb8854964e0325dd7cc361",
     "url": "/irregular-verbs/index.html"
   }
 ];
