@@ -21,6 +21,15 @@ export default class Verb{
     getPastParticiple = () => this.pastParticiple;
     getMeaning = () => this.meaning;
 
+    toCsv = () => {
+        return [this.getGroup(), 
+            this.getVerbalBase(), 
+            this.getSimplePast(), 
+            this.getPastParticiple(), 
+            this.getMeaning()]
+            .join(";");
+    }
+
     static fromDto = (dto : any) => {
         DtoHelper.assertFieldAndType(dto, "group", FieldType.STRING);
         const group = parseInt(dto.group);

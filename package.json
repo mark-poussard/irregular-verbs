@@ -9,6 +9,7 @@
     "@types/react": "16.7.9",
     "@types/react-dom": "16.0.11",
     "@types/seed-random": "^2.2.0",
+    "file-saver": "^2.0.2",
     "node-sass": "^4.13.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -20,6 +21,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.1",
     "gh-pages": "^2.1.1"
   },
   "scripts": {

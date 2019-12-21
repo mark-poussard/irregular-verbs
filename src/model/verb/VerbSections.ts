@@ -1,24 +1,19 @@
-import Verb from "./Verb";
+import VerbSection, { NBR_SECTIONS } from "./VerbSection";
 import SeedRandom from "seed-random";
 import VerbGroup, { MAX_GROUP } from "./VerbGroup";
+import Verb from "./Verb";
 
-export const NBR_SECTIONS = 10;
+export default class VerbSections{
+    private sections : VerbSection[];
 
-export default class VerbSection{
-    private nbr : number;
-    private verbs : Verb[];
-
-    constructor(nbr : number, verbs : Verb[]){
-        this.nbr = nbr;
-        this.verbs = verbs;
+    constructor(sections : VerbSection[]){
+        this.sections = sections;
     }
 
-    getVerbs = () => this.verbs;
-    getNbr = () => this.nbr;
-    sizeGroup = (group : number) => this.verbs.filter(v => v.getGroup() === group).length;
+    getSections = () => this.sections;
 
     toCsv = () => {
-        return `Section ${this.nbr}\n` +  this.verbs.map(v => v.toCsv()).join("\n");
+        return this.sections.map(s => s.toCsv()).join("\n");
     }
 
     static generate = (verbs : Verb[], seed : number) => {
@@ -46,6 +41,6 @@ export default class VerbSection{
             verbSections.push(new VerbSection(i+1, sectionVerbs));
         }
         SeedRandom.resetGlobal();
-        return verbSections;
+        return new VerbSections(verbSections);
     }
 }
